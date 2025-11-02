@@ -12,7 +12,6 @@ export const TodoList = ({
   onToggle,
   onDelete,
 }: TodoListProps) => {
-  console.log("todolistttt", todos);
   return (
     <div className="todo-list-container">
       <h2 className="todo-list-title">

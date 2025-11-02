@@ -1,7 +1,3 @@
-// --- File: src/api.ts ---
-// This file simulates a real server API using localStorage
-// and adds a 1-second delay to mimic network latency.
-
 import type { Todo } from "./types";
 
 const TODOS_STORAGE_KEY = "todos";
@@ -30,7 +26,7 @@ export const api = {
       const todos = loadTodos();
       const updatedTodos = [...todos, newTodo];
       saveTodos(updatedTodos);
-      console.log("SERVER: (POST) Created new todo", newTodo);
+      console.log("SERVER: (POST) created new todo", newTodo);
       return newTodo;
     },
 
@@ -41,7 +37,7 @@ export const api = {
         todo.id === updatedTodo.id ? updatedTodo : todo
       );
       saveTodos(updatedTodos);
-      console.log("SERVER: (PUT) Updated todo", updatedTodo);
+      console.log("SERVER: (PUT) updated todo", updatedTodo);
       return updatedTodo;
     },
 
@@ -50,7 +46,7 @@ export const api = {
       const todos = loadTodos();
       const updatedTodos = todos.filter((todo) => todo.id !== id);
       saveTodos(updatedTodos);
-      console.log("SERVER: (DELETE) Deleted todo", id);
+      console.log("SERVER: (DELETE) deleted todo", id);
       return { id };
     },
   },
